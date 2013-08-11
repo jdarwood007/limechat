@@ -42,6 +42,12 @@ static NSMutableArray* excludeWords;
     return [ud boolForKey:@"Preferences.General.confirm_quit"];
 }
 
++ (BOOL)trimTitle
+{
+    NSUserDefaults* ud = [NSUserDefaults standardUserDefaults];
+    return [ud boolForKey:@"Preferences.General.trim_title"];
+}
+
 + (DoubleClickUserActionType)doubleClickUserAction
 {
     NSUserDefaults* ud = [NSUserDefaults standardUserDefaults];
@@ -826,6 +832,7 @@ static NSMutableArray* excludeWords;
     [d setBool:YES forKey:@"Preferences.General.open_browser_in_background"];
     [d setBool:YES forKey:@"Preferences.General.show_inline_images"];
     [d setBool:YES forKey:@"Preferences.General.show_join_leave"];
+    [d setBool:YES forKey:@"Preferences.General.trim_tile"];
     [d setBool:YES forKey:@"Preferences.General.showRename"];
     [d setBool:YES forKey:@"Preferences.General.use_growl"];
     [d setBool:YES forKey:@"Preferences.General.stop_growl_on_active"];

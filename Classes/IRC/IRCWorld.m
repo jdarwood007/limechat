@@ -433,10 +433,14 @@
             NSString* mode = [c.mode titleString];
             int count = [c numberOfMembers];
             NSString* topic = c.topic ?: @"";
-            if (topic.length > 25) {
-                topic = [topic substringToIndex:25];
-                topic = [topic stringByAppendingString:@"…"];
-            }
+
+		if ([Preferences trimTitle])
+		{
+	            if (topic.length > 25) {
+	                topic = [topic substringToIndex:25];
+	                topic = [topic stringByAppendingString:@"…"];
+	            }
+		}
 
             if (title.length) [title appendString:@" "];
 
@@ -450,7 +454,7 @@
             }
 
             if (mode.length) {
-                if (count > 1) {
+                if ([Preferences trimTitle] && count > 1) {
                     if (title.length) [title appendString:@" "];
                     [title appendFormat:@"(%d,%@)", count, mode];
                 }
@@ -460,7 +464,7 @@
                 }
             }
             else {
-                if (count > 1) {
+                if ([Preferences trimTitle] && count > 1) {
                     if (title.length) [title appendString:@" "];
                     [title appendFormat:@"(%d)", count];
                 }

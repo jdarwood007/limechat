@@ -57,6 +57,7 @@ typedef enum {
 + (BOOL)showJoinLeave;
 + (BOOL)showRename;
 + (BOOL)stopGrowlOnActive;
++ (BOOL)trimTitle;
 + (BOOL)bounceIconOnEveryPrivateMessage;
 + (BOOL)autoJoinOnInvited;
 + (TabActionType)tabAction;
